@@ -5,3 +5,20 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+poll = Poll.create(
+  owner: "seed",
+  question: "Is this a question?",
+  choices: 2
+)
+
+yes = Option.create(
+  answer: "yes",
+  count: 0,
+  poll_id: 1
+)
+
+no = Option.create(
+  answer: "no",
+  count: 0,
+  poll_id: 1
+)
