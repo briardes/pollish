@@ -12,14 +12,9 @@
   <tbody>
   <% @polls.each do |poll| %>
       <tr>
-<<<<<<< HEAD
         <td><%= poll.name%></td>
-        <td><%= %></td>
-        <td><%= %></td>
-=======
         <td><%= poll.owner %></td>
         <td><%= poll.question %></td>
->>>>>>> upstream/master
         <td><%= link_to 'Show', poll %></td>
       </tr>
   <% end %>
