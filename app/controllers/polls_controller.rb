@@ -1,6 +1,7 @@
 class PollsController < ApplicationController
   before_action :set_poll, only: [:show, :edit, :update, :destroy]
 
+
   # GET /polls
   # GET /polls.json
   def index
@@ -11,6 +12,7 @@ class PollsController < ApplicationController
   # GET /polls/1.json
   def show
     @options = Option.where(teacher_id: session[:poll_id])
+    @options = Option.new
   end
 
   # GET /polls/new
