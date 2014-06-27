@@ -12,7 +12,7 @@
   <tbody>
   <% @polls.each do |poll| %>
       <tr>
-        <td><%= poll.owner %></td>
+        <td><%= poll.owner.capitalize %></td>
         <td><%= poll.question %></td>
         <td><%= link_to 'Show', poll %></td>
       </tr>
