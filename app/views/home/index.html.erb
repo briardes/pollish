@@ -1,18 +1,37 @@
-<% content_for :homepage do%>
-    <% @polls.each do |poll| %>
-      <tr>
-         <td><%= poll.owner.capitalize%></td>
-         <td><%= poll.question.capitalize%></td>
-      </tr>
-    <% end %>
-<% end %>
-
 <head>
+  <% content_for :title, "Pollish" %>
+  <!--<title>-->
+  <!--Pollish-->
+  <!--</title>-->
   <link href='http://fonts.googleapis.com/css?family=Pacifico|Signika:600' rel='stylesheet' type='text/css'>
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/favicon.icon" type="image/x-icon">
+  <link rel="icon" href="/favicon.icon" type="image/x-icon">
 </head>
 
 <h1>Poll<span class="special">ish</span></h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>
+      Owner
+    </th>
+    <th>
+      Poll
+    </th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @polls.each do |poll| %>
+      <tr>
+        <td><%= poll.owner.capitalize%></td>
+        <td><%= poll.question.capitalize%></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+
 <%= link_to 'Make your own!', new_poll_path, :class => "button [radius round]" %>
 <%= link_to 'See all polls', polls_path, :class => "button [radius round]" %>
