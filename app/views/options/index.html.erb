@@ -10,9 +10,11 @@
   <tbody>
     <% @options.each do |option| %>
       <tr>
-        <td><%= link_to 'Show', option %></td>
-        <td><%= link_to 'Edit', edit_option_path(option) %></td>
-        <td><%= link_to 'Destroy', option, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+        <td><%=option.answer %></td>
+        <td><%= link_to 'Show',  poll_option_path(option.poll_id ,option)  %></td>
+        <td><%= link_to 'Edit', edit_poll_option_path(option.poll_id, option) %></td>
+        <td><%= link_to 'Destroy', edit_poll_option_path(option.poll_id, option), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -20,4 +22,4 @@
 
 <br>
 
-<%= link_to 'New Option', new_option_path %>
+<%= link_to 'New Option', new_poll_option_path %>

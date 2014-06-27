@@ -1,4 +1,4 @@
-<%= simple_form_for(@poll, @option) do |o| %>
+<%= simple_form_for([@poll, @option]) do |o| %>
     <%= o.error_notification %>
 
     <%= o.input :answer, label: 'What is the answer' %>

@@ -1,11 +1,11 @@
 class OptionsController < ApplicationController
   before_action :set_poll
-  before_action :set_option, only: [:show, :edit, :update, :destroy]
+  before_action :set_option, only: [:show, :edit]
 
   # GET /options
   # GET /options.json
   def index
-    @options = Option.all
+    @options = @poll.options
   end
 
   # GET /options/1
@@ -27,11 +27,20 @@ class OptionsController < ApplicationController
   def create
     @option = @poll.options.create(option_params)
       if @option.save
-        redirect_to  poll_option_path(@poll), notice: 'Option was successfully created.'
+        redirect_to  poll_options_path, notice: 'Option was successfully created.'
       else
         render :new
       end
   end
+
+  # def createy
+  #   @submission = @assignment.submissions.create(submission_params)
+  #   if @submission.save
+  #     redirect_to assignments_path, notice: 'Assignment was successfully submitted for review.'
+  #   else
+  #     redirect_to assignment_path(@assignment)
+  #   end
+  # end
 
   # PATCH/PUT /options/1
   # PATCH/PUT /options/1.json
@@ -47,17 +56,6 @@ class OptionsController < ApplicationController
     end
   end
 
-  # def createy
-  #   @submission = @assignment.submissions.create(submission_params)
-  #   if @submission.save
-  #     redirect_to assignments_path, notice: 'Assignment was successfully submitted for review.'
-  #   else
-  #     redirect_to assignment_path(@assignment)
-  #   end
-  # end
-
-
-
 
   # DELETE /options/1
   # DELETE /options/1.json
@@ -72,7 +70,7 @@ class OptionsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_option
-      @option = Option.find(params[:id])
+      @option = @poll.options.find(params[:id])
     end
 
     def set_poll
@@ -81,6 +79,6 @@ class OptionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def option_params
-      params[:option].permit(:answer, :count)
+      params.require(:option).permit(:answer, :count)
     end
 end
