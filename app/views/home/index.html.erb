@@ -1,3 +1,12 @@
+<% content_for :homepage do%>
+    <% @polls.each do |poll| %>
+      <tr>
+         <td><%= poll.owner.capitalize%></td>
+         <td><%= poll.question.capitalize%></td>
+      </tr>
+    <% end %>
+<% end %>
+
 <head>
   <% content_for :title, "Pollish" %>
   <!--<title>-->
@@ -7,31 +16,11 @@
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
 </head>
-<% content_for :polls_all do%>
-    <table>
-      <thead>
-      <tr>
-        <th>
-          Owner
-        </th>
-        <th>
-          Poll
-        </th>
-      </tr>
-      </thead>
-
-      <tbody>
-      <% @polls.each do |poll| %>
-          <tr>
-            <td><%= poll.owner.capitalize%></td>
-            <td><%= poll.question.capitalize%></td>
-          </tr>
-      <% end %>
-      </tbody>
-    </table>
-<% end %>
 
 <h1>Poll<span class="special">ish</span></h1>
 <%= link_to 'Make your own!', new_poll_path, :class => "button [radius round]" %>
 
+<<<<<<< HEAD
 <%= link_to 'See all polls', polls_path, :class => "button [radius round]" %>
+=======
+>>>>>>> upstream/master
