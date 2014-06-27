@@ -12,8 +12,10 @@
   </head>
 
   <body>
+
     <div class="container">
     <%= yield %>
+    <%= render "homepage" %>
     <%= javascript_include_tag "application" %>
     </div>
   </body>
