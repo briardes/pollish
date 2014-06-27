@@ -1,5 +1,5 @@
 
 <p id="notice"><%= notice %></p>
+<%=  link_to 'addvote', add_vote_poll_option_path(@poll, @option), method: :put  %>
 
-<%= link_to 'Edit', edit_option_path(@option) %> |
-<%= link_to 'Back', options_path %>
+<%= link_to 'Back', polls_path %>

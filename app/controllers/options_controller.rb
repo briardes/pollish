@@ -1,6 +1,11 @@
 class OptionsController < ApplicationController
   before_action :set_poll
-  before_action :set_option, only: [:show, :edit]
+  before_action :set_option, only: [:show, :edit, :add_vote]
+
+  def add_vote
+    @option.add_vote!
+    redirect_to  poll_path(@poll)
+  end
 
   # GET /options
   # GET /options.json
@@ -32,15 +37,6 @@ class OptionsController < ApplicationController
         render :new
       end
   end
-
-  # def createy
-  #   @submission = @assignment.submissions.create(submission_params)
-  #   if @submission.save
-  #     redirect_to assignments_path, notice: 'Assignment was successfully submitted for review.'
-  #   else
-  #     redirect_to assignment_path(@assignment)
-  #   end
-  # end
 
   # PATCH/PUT /options/1
   # PATCH/PUT /options/1.json

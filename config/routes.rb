@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :polls do
-    resources :options
+    resources :options, except: [:destroy]do
+      put 'add_vote', on: :member
+    end
   end
 end

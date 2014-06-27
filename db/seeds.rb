@@ -6,19 +6,19 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 poll = Poll.create(
-  owner: "test man",
+  owner: "test",
   question: "lets test this capitalization!",
   choices: 2
 )
 
 yes = Option.create(
   answer: "yes",
-  count: 0,
+  count: 50,
   poll_id: 1
 )
 
 no = Option.create(
   answer: "no",
-  count: 0,
+  count: 150,
   poll_id: 1
 )
