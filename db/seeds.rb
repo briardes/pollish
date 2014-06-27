@@ -6,8 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 poll = Poll.create(
-  owner: "seed",
-  question: "Is this a question?",
+  owner: "test man",
+  question: "lets test this capitalization!",
   choices: 2
 )
 
