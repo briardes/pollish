@@ -17,8 +17,22 @@
  */
 
 
-.container{
-    margin-left: 10%;
-    margin-right: 10%;
+.container
+{
+    margin-left: 15%;
+    margin-right: 15%;
+}
 
+h1
+{
+    font-family: 'signika', 'sans-serif';
+}
+
+h1.special
+{
+    font-family: 'pacifico', 'cursive';
+}
+span.special
+{
+    font-family: 'pacifico', 'cursive';
 }

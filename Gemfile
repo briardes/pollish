@@ -38,8 +38,10 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem 'simple_form'
+
 gem 'foundation-rails'
-# gem 'font-awesome-less'
+
+gem 'font-awesome-sass'
 
 group :development do
   gem "better_errors"
