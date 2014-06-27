@@ -15,10 +15,9 @@
   <body>
 
     <div class="container">
-    <%= yield %>
-    <%= render "homepage" %>
+      <%= render "homepage" %>
+      <%= yield %>
     <%= javascript_include_tag "application" %>
-    <%= yield :polls_all %>
     </div>
   </body>
 
