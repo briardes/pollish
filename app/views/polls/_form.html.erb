@@ -1,12 +1,42 @@
-<%= simple_form_for(@poll) do |f| %>
-    <%= f.error_notification %>
+<%= form_for(@poll) do |f| %>
+    <% if @poll.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@poll.errors.count, "error") %> prohibited this poll from being saved:</h2>
 
-    <%= f.input :owner, label: "What is your name?" %>
-    <%= f.input :question, label: "What is you question?"%>
-    <%= f.input :choices, label: "How many choices would you like?" %>
-    <%= f.button :submit %>
+          <ul>
+            <% @poll.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :owner %><br>
+      <%= f.text_field :owner %>
+    </div>
+
+    <div class="field">
+      <%= f.label :question %><br>
+      <%= f.text_field :question %>
+    </div>
+
+    <div class="field">
+      <%= f.label :choices %><br>
+      <%= f.text_field :choices %>
+    </div>
 
 
+    <div>
+      <%= f.fields_for :options do |b| %>
+          <%= b.label :answer, 'Answer' %><br>
+          <%= b.text_field :answer %>
+          <%= b.hidden_field :count, value: 0 %>
 
+    <% end %>
+    </div>
 
+    <div class="actions">
+      <%= f.submit %>
+    </div>
 <% end %>

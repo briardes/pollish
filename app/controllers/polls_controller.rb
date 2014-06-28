@@ -12,12 +12,12 @@ class PollsController < ApplicationController
   # GET /polls/1.json
   def show
     @options = Option.where(teacher_id: session[:poll_id])
-    @options = Option.new
   end
 
   # GET /polls/new
   def new
     @poll = Poll.new
+    @poll.options.build
   end
 
   # GET /polls/1/edit
@@ -72,6 +72,6 @@ class PollsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def poll_params
-      params[:poll].permit(:owner, :question, :choices)
+      params[:poll].permit(:owner, :question, :choices, {options_attributes: [:id, :answer,:count]})
     end
 end
