@@ -1,8 +1,0 @@
-<%= simple_form_for([@poll, @option]) do |o| %>
-
-    <%= o.error_notification %>
-    <%= o.input :answer, label: "Option" %>
-    <%= o.input :count, :as => "hidden", :input_html => { :value => 0 } %>
-    <%= o.button :submit %>
-
-<% end %>
