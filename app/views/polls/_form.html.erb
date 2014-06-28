@@ -31,8 +31,8 @@
       <%= f.fields_for :options do |b| %>
          <%= render 'option_fields', f: b %>
     <% end %>
-      <%= link_to_add_fields "Add Answer", f, :options %>
-    </div>
+      <%= link_to_add_fields "Add another option", f, :options %>
+    </div><br>
 
     <div class="actions">
       <%= f.submit %>
