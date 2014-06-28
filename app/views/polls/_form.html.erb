@@ -29,9 +29,7 @@
 
     <div>
       <%= f.fields_for :options do |b| %>
-          <%= b.label :answer, 'Answer' %><br>
-          <%= b.text_field :answer %>
-          <%= b.hidden_field :count, value: 0 %>
+         <%= render 'option_fields', f: b %>
     <% end %>
     </div>
 

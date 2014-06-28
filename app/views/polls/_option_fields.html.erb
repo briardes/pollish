@@ -1,0 +1,7 @@
+<fieldset>
+  <%= f.hidden_field :count, value: 0 %>
+  <%= f.label :answer, "Answer" %>
+  <%= f.text_field :answer %>
+  <%= f.hidden_field :_destroy %>
+  <%= link_to "remove", '#', class: "remove_fields" %>
+</fieldset>
