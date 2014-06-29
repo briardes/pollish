@@ -21,12 +21,6 @@
       <%= f.text_field :question %>
     </div>
 
-    <div class="field">
-      <%= f.label :choices %><br>
-      <%= f.text_field :choices %>
-    </div>
-
-
     <div>
       <%= f.fields_for :options do |b| %>
          <%= render 'option_fields', f: b %>
