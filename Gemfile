@@ -43,6 +43,8 @@ gem 'foundation-rails'
 
 gem 'font-awesome-sass'
 
+gem 'googlecharts'
+
 group :development do
   gem "better_errors"
   gem "binding_of_caller"

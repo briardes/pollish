@@ -5,7 +5,7 @@
 
 <% i = 1 %>
 <% @poll.options.each do |option| %>
-    <p>Answer <%= i %>: | <%= option.answer %> | <%= option.count %> |
+    <p>Answer <%= i %>: | <%= option.answer %> |
     <%=  link_to 'addvote', add_vote_poll_option_path(@poll, option), method: :put  %></p>
 
     <% i += 1 %>
@@ -17,6 +17,14 @@
 <%= link_to 'Back', polls_path %>
 
  <% else %>
-    hellloooo
+    <% i = 1 %>
+    <% @poll.options.each do |option| %>
+        <p>Answer <%= i %>: | <%= option.answer %> | <%= option.count %>
+        <% i += 1 %>
+
+    <% end %>
+
+    <%= pie_chart @poll.options(:count).count %>
+
 <%end # if cookies %>
 
