@@ -8,7 +8,6 @@
 poll = Poll.create(
   owner: "test",
   question: "lets test this capitalization!",
-  choices: 2
 )
 
 yes = Option.create(

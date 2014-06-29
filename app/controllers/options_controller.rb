@@ -3,8 +3,13 @@ class OptionsController < ApplicationController
   before_action :set_option, only: [:show, :edit, :add_vote]
 
   def add_vote
-    @option.add_vote!
-    redirect_to  poll_path(@poll)
+    if cookies[:voted]
+      redirect_to @poll
+    else
+      @option.add_vote!
+      cookies[:voted] = {value: true, expires: Time.now + 3600}
+      redirect_to @poll
+    end
   end
 
   # GET /options

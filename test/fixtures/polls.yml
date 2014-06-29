@@ -3,9 +3,7 @@
 one:
   owner: MyString
   question: MyText
-  choices: 1
 
 two:
   owner: MyString
   question: MyText
-  choices: 1
