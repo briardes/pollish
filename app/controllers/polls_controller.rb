@@ -10,7 +10,7 @@ class PollsController < ApplicationController
   # GET /polls/1
   # GET /polls/1.json
   def show
-    @options = Option.where(teacher_id: session[:poll_id])
+    @options = Option.where(id: session[:poll_id])
   end
 
   # GET /polls/new

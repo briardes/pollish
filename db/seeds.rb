@@ -21,3 +21,37 @@ no = Option.create(
   count: 150,
   poll_id: 1
 )
+
+poll2 = Poll.create(
+    owner: 'Poll Meister',
+    question: 'What is you favorite animal?'
+)
+
+Option.create(
+    answer: "Tiger",
+    count: 50,
+    poll_id: 2
+)
+
+Option.create(
+    answer: "Gorilla",
+    count: 70,
+    poll_id: 2
+)
+Option.create(
+    answer: "Slow Loris",
+    count: 50,
+    poll_id: 2
+)
+
+Option.create(
+    answer: "Fruitbat",
+    count: 200,
+    poll_id: 2
+)
+
+Option.create(
+    answer: "BlueWhale",
+    count: 450,
+    poll_id: 2
+)

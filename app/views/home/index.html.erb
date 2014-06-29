@@ -26,7 +26,7 @@
   <% @polls.each do |poll| %>
       <tr>
         <td><%= poll.owner.capitalize%></td>
-        <td><%= poll.question.capitalize%></td>
+        <td><%= link_to "#{poll.question.capitalize}", poll%></td>
       </tr>
   <% end %>
   </tbody>

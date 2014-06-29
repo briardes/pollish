@@ -15,11 +15,9 @@
 <%= link_to 'Back', polls_path %>
 
  <% else # if cookies[:voted] %>
-    <% i = 1 %>
+    <h2><%= @poll.question%></h2>
     <% @poll.options.each do |option| %>
-        <p>Answer <%= i %>: | <%= option.answer %> | <%= option.count %>
-        <% i += 1 %>
-
+        <p><%= option.answer %> | <%= option.count %> votes</p>
     <% end # do each %>
 
     <%= pie_chart @poll.options.pluck(:answer, :count) %>
