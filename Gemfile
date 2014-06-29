@@ -43,7 +43,7 @@ gem 'foundation-rails'
 
 gem 'font-awesome-sass'
 
-gem 'googlecharts'
+gem 'chartkick'
 
 group :development do
   gem "better_errors"

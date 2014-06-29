@@ -7,24 +7,22 @@
 <% @poll.options.each do |option| %>
     <p>Answer <%= i %>: | <%= option.answer %> |
     <%=  link_to 'addvote', add_vote_poll_option_path(@poll, option), method: :put  %></p>
-
     <% i += 1 %>
-
 <% end %>
 
 
 <%= link_to 'Edit', edit_poll_path(@poll) %> |
 <%= link_to 'Back', polls_path %>
 
- <% else %>
+ <% else # if cookies[:voted] %>
     <% i = 1 %>
     <% @poll.options.each do |option| %>
         <p>Answer <%= i %>: | <%= option.answer %> | <%= option.count %>
         <% i += 1 %>
 
-    <% end %>
+    <% end # do each %>
 
     <%= pie_chart @poll.options(:count).count %>
 
-<%end # if cookies %>
+<%end # if %>
 
