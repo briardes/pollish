@@ -2,5 +2,5 @@
 
 * This application was designed to allow users to create questions and send a link to people to vote on them, similar to a site like strawpoll
 
-* The Javascript I used for this program was taken from a railscast episode #196 Nested Model Form
+* The Javascript I used for this program was taken from railscast episode #196 Nested Model Form
 
