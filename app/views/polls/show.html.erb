@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-<% if !cookies[:voted] %>
+<% if !cookies[:voted].include?(@poll.id) %>
 <h2><%= @poll.question%></h2>
 <p>Created by: <%= @poll.owner%> at:<%= @poll.created_at%></p>
 
