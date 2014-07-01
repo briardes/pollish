@@ -33,5 +33,7 @@
 </table>
 
 
-<%= link_to 'Make your own!', new_poll_path, :class => "button [radius round]" %>
+<%= link_to 'Make your own!', new_poll_path, :class => "button [radius round]", remote: true %>
+<div id="new-poll-modal" class="reveal-modal" data-reveal></div>
+
 <%= link_to 'See all polls', polls_path, :class => "button [radius round]" %>

@@ -31,6 +31,7 @@ class PollsController < ApplicationController
     respond_to do |format|
       if @poll.save
         format.html { redirect_to @poll, notice: 'Poll was successfully created.' }
+        format.js
       else
         format.html { render :new }
       end
