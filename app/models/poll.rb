@@ -7,4 +7,10 @@ class Poll < ActiveRecord::Base
                                 reject_if: lambda { |option| option['answer'].blank? }
   validates :owner, presence: true
   validates :question, presence: true
+
+  def old
+    if self.created_at + (7*24*60*60) > DateTime.now
+      true
+    end
+  end
 end
