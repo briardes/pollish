@@ -9,7 +9,7 @@ class Poll < ActiveRecord::Base
   validates :question, presence: true
 
   def old
-    if self.created_at > self.created_at + (7*24*60*60)
+    if self.created_at + (7*24*60*60) > DateTime.now
       true
     end
   end

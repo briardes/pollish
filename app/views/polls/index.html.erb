@@ -11,11 +11,13 @@
 
   <tbody>
   <% @polls.each do |poll| %>
+  <%if poll.old == false %>
       <tr>
         <td><%= poll.owner.capitalize %></td>
         <td><%= poll.question %></td>
         <td><%= link_to 'Show', poll %></td>
       </tr>
+  <% end %>
   <% end %>
   </tbody>
 </table>
