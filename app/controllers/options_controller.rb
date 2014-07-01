@@ -13,14 +13,10 @@ class OptionsController < ApplicationController
     end
   end
 
-  # GET /options
-  # GET /options.json
   def index
     @options = @poll.options
   end
 
-  # GET /options/1
-  # GET /options/1.json
   def show
   end
 
@@ -33,8 +29,6 @@ class OptionsController < ApplicationController
   def edit
   end
 
-  # POST /options
-  # POST /options.json
   def create
     @option = @poll.options.create(option_params)
       if @option.save
@@ -50,10 +44,8 @@ class OptionsController < ApplicationController
     respond_to do |format|
       if @option.update(option_params)
         format.html { redirect_to @option, notice: 'Option was successfully updated.' }
-        format.json { render :show, status: :ok, location: @option }
       else
         format.html { render :edit }
-        format.json { render json: @option.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -65,7 +57,6 @@ class OptionsController < ApplicationController
     @option.destroy
     respond_to do |format|
       format.html { redirect_to options_url, notice: 'Option was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
