@@ -1,9 +1,19 @@
 <h1 class="special" style="margin: 12px;">Listing polls</h1>
 
-
+<table>
+  <thead>
+  <tr>
+    <th>Owner</th>
+    <th>Question</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+  <tbody>
 <div id="polls">
   <%= render :partial => "polls", :locals => {:polls => @polls} %>
 </div>
+</tbody>
+</table>
 
 
 <%= link_to 'Make your own!', new_poll_path, :class => "button [radius round]", remote: true %>

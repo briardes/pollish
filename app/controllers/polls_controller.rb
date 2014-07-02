@@ -34,10 +34,12 @@ class PollsController < ApplicationController
     respond_to do |format|
       if @poll.save
         format.html { redirect_to @poll, notice: 'Poll was successfully created.' }
-        format.js
+        format.js do
+          @polls = Poll.all
+        end
       else
         format.html { render :new }
-        format.js
+        format.js { render :new }
       end
     end
   end

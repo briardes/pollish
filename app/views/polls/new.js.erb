@@ -3,6 +3,9 @@ $("#new-poll-modal").
     append('<a class=\"close-reveal-modal\">&#215;</a>').
     foundation("reveal", "open");
 
+$('#new_poll').
+    attr("data-remote", "true");
+
 (function() {
   jQuery(function() {
     $('form').on('click', '.remove_fields', function(event) {
