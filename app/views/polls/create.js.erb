@@ -1,0 +1,5 @@
+$("#new-poll-modal").
+    html('').
+    foundation("reveal", "close");
+
+$("#polls").html('<%= j render(:partial => "polls", :object => @polls) %>');

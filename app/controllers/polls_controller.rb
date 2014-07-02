@@ -17,6 +17,10 @@ class PollsController < ApplicationController
   def new
     @poll = Poll.new
     @poll.options.build
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   # GET /polls/1/edit
@@ -27,13 +31,13 @@ class PollsController < ApplicationController
   # POST /polls.json
   def create
     @poll = Poll.new(poll_params)
-
     respond_to do |format|
       if @poll.save
         format.html { redirect_to @poll, notice: 'Poll was successfully created.' }
         format.js
       else
         format.html { render :new }
+        format.js
       end
     end
   end
