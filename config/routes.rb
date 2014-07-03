@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
-  root 'home#index'
+  root 'polls#index'
 
   resources :polls do
     resources :options, except: [:destroy]do
