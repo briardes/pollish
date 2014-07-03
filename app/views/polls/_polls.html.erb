@@ -1,10 +1,12 @@
-
-  <% @polls.each do |poll| %>
-  <%if poll.old == false %>
-      <tr>
-        <td><%= poll.owner.capitalize %></td>
-        <td><%= poll.question %></td>
-        <td><%= link_to 'Show', poll %></td>
-      </tr>
-  <% end %>
-  <% end %>
+<table>
+  <thead>
+  <tr>
+    <th>Owner</th>
+    <th>Question</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+  <tbody>
+<%= render 'poll' %>
+  </tbody>
+</table>
