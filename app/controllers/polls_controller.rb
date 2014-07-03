@@ -4,6 +4,7 @@ class PollsController < ApplicationController
   # GET /polls
   # GET /polls.json
   def index
+    session[:voted] ||=[]
     @polls = Poll.all
   end
 

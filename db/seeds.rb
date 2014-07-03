@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 poll = Poll.create(
   owner: "test",
-  question: "lets test this capitalization!",
+  question: "lets test this capitalization!"
 )
 
 yes = Option.create(
