@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-<% if !cookies[:voted].include?(@poll.id.to_s) %>
+<% if !session[:voted].include?(@poll.id) %>
 <h2><%= @poll.question%></h2>
 <p>Created by: <%= @poll.owner%> at:<%= @poll.created_at%></p>
 
@@ -9,7 +9,6 @@
     <%=  link_to 'addvote', add_vote_poll_option_path(@poll, option), method: :put  %></p>
     <% i += 1 %>
 <% end %>
-
 
 <%= link_to 'Edit', edit_poll_path(@poll) %> |
 <%= link_to 'Back', polls_path %>
