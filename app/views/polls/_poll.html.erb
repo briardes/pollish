@@ -1,8 +1,8 @@
   <% @polls.each do |poll| %>
   <%if poll.old == false %>
       <tr>
-        <td><%= sanitize poll.owner.capitalize %></td>
-        <td><%= sanitize link_to poll.question, poll %></td>
+        <td><%= poll.owner.capitalize %></td>
+        <td><%= link_to poll.question, poll %></td>
       </tr>
   <% end %>
   <% end %>

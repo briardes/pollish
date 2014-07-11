@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 <% if !session[:voted].include?(@poll.id) %>
 <h2><%= @poll.question%></h2>
-<p>Created by: <%= sanitize @poll.owner%> at:<%= @poll.created_at%></p>
+<p>Created by: <%= @poll.owner%> at:<%= @poll.created_at%></p>
 
 <% i = 1 %>
 <% @poll.options.each do |option| %>
-    <p>Answer <%= i %>: | <%= sanitize option.answer %> |
+    <p>Answer <%= i %>: | <%= option.answer %> |
     <%=  link_to 'addvote', add_vote_poll_option_path(@poll, option), method: :put  %></p>
     <% i += 1 %>
 <% end %>
