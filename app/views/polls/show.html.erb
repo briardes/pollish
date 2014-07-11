@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 <% if !session[:voted].include?(@poll.id) %>
 <h2><%= @poll.question%></h2>
-<p>Created by: <%= @poll.owner%> at:<%= @poll.created_at%></p>
+<p>Created by: <%= sanitize @poll.owner%> at:<%= @poll.created_at%></p>
 
 <% i = 1 %>
 <% @poll.options.each do |option| %>
@@ -16,7 +16,7 @@
  <% else # if session[:voted] %>
     <h2><%= @poll.question%></h2>
     <% @poll.options.each do |option| %>
-        <p><%= option.answer %> | <%= option.count %> votes</p>
+        <p><%= sanitize option.answer %> | <%= option.count %> votes</p>
     <% end # do each %>
 
     <%= pie_chart @poll.options.pluck(:answer, :count) %>
